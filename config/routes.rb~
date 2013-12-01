@@ -3,6 +3,5 @@ Site::Application.routes.draw do
 
   get "static_pages/home"
   get "users/new"
-
   match '/signup',  to: 'users#new',            via: 'get'
 end
