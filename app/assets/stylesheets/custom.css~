@@ -93,10 +93,7 @@ input {
   @extend .control-group;
   @extend .error;
 }
-.border {
-	border: 1px solid gray;
-}
-.navbar-logged-in {
-	color: #ffffff;
- 	padding-top: 12px;
+/* LOGIN - USER INFO BOX */
+.login {
+	border: 1px solid gray"
 }
