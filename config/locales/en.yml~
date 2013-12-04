@@ -29,4 +29,3 @@ en:
           attributes:
             categoryname:
               blank: "is required"
-              taken: "allready exists"

@@ -9,7 +9,9 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
+<div class="red_stripes"></div>
 
+<section>
 <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
@@ -17,13 +19,8 @@
 
       <%= yield %>
 </div>
+</section>
 
 <%= render 'layouts/footer' %>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<div>Debug</div>
-<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

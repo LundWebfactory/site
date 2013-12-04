@@ -1,12 +1,10 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+<h3>Showing all users <small>(<%= @users.count %>)</small></h3>
+
 <%= will_paginate %>
+
 <ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= gravatar_for user, size: 16 %>
-      <%= link_to user.username, user %>
-    </li>
-  <% end %>
+    <%= render @users %>
 </ul>
+
 <%= will_paginate %>
