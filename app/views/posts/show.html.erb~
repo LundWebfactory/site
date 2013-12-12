@@ -1,0 +1,6 @@
+<% provide(:title, @post.itemname) %>
+<h1><%= @post.itemname %></h1>
+<h1><%= @post.itemdescription %></h1>
+<h1><%= @post.id %></h1>
+
+

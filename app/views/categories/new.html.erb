@@ -8,7 +8,8 @@
 
       <%= f.label :categoryname, 'Category Name' %>
       <%= f.text_field :categoryname %>
-      <%= f.submit "Create category", class: "btn btn-large btn-default" %>
+      <center><%= f.submit "Create category", class: "btn btn-large btn-default" %></center>
     <% end %>
+<center><%= link_to "Cancel", categories_path, class: "btn btn-small btn-default" %></center>
   </div>
 </div>

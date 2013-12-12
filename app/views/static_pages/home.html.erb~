@@ -1,3 +1,26 @@
 <% provide(:title, 'Home') %>
-<h1>Fresh Start</h1>
+<% if signed_in? %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <ul class="cat-links">
+	<% @categories.each do |categorie| %>
+          <li><%= link_to categorie.categoryname, category_path(categorie) %></li>
+        <% end %>
+      </ul>
+    </section>
+  </aside>
+</div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome</h1>
+
+    <%= link_to "Sign up!", signup_path, class: "btn btn-small btn-default" %>
+  </div>
+
+<% end %>
+
 

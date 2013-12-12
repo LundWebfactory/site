@@ -1,12 +1,15 @@
 Site::Application.routes.draw do
-  resources :users
+  resources :users do
+    member do    
+      put :'toggle_admin'
+    end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :categories
+  resources :posts
 
   root 'static_pages#home'
-
-  get "static_pages/home"
-  get "categories/edit"
 
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',            via: 'get'

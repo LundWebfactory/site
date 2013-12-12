@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    redirect_to(root_url) unless current_user.admin?
     @category = Category.find(params[:id])
   end
 
@@ -22,7 +23,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update_attributes(category_params)
       flash[:success] = "Category updated"
-      redirect_to @category
+      redirect_to categories_url
     else
       render 'edit'
     end
@@ -38,7 +39,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     if @category.save
       flash[:success] = "Category created"
-      redirect_to @category
+      redirect_to categories_url
     else
       render 'new'
     end

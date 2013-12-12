@@ -1,0 +1,9 @@
+<% provide(:title, 'Categories - showing all') %>
+<%= link_to "Add new category", 'categories/new', class: "btn btn-small btn-default" %>
+hej
+<ul class="users">
+  <% @categories.each do |categorie| %>
+    <li><%= categorie.categoryname %></li>
+  <% end %>
+</ul>
+

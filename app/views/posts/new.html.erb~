@@ -1,0 +1,22 @@
+<% provide(:title, 'Create Post') %>
+<h1>Create Post</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@post) do |f| %>
+      <%= render 'shared/error_messages_post' %>
+
+
+      <%= f.label :itemname %>
+      <%= f.text_field :itemname %>
+
+      <%= f.label :itemdescription %>
+      <%= f.text_field :itemdescription %>
+
+      <%= f.label :category_id %>
+      <%= f.text_field :category_id %>
+
+      <center><%= f.submit "Create post", class: "btn btn-large btn-primary" %></center>
+    <% end %>
+    <center><%= link_to "Cancel", root_path, class: "btn btn-small btn-default center" %></center>
+  </div>
+</div>

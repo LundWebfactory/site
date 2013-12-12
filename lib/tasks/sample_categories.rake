@@ -1,8 +1,8 @@
 namespace :db do
   desc "Fill database with sample categories"
   task populatecategories: :environment do
-    500.times do |n|
-      categoryname  = Faker::Name.name
+    25.times do |n|
+      categoryname  = "category-#{n+1}"
       Category.create!(categoryname: categoryname)
     end
   end

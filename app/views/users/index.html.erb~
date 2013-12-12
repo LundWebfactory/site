@@ -1,6 +1,6 @@
 <% provide(:title, 'All users') %>
-<h3>Showing all users <small>(<%= @users.count %>)</small></h3>
-
+<h3>Users <small>(<%= @users.count %>)</small></h3>
+<%= link_to "Add new user", 'categories/new', class: "btn btn-small btn-default" %>
 <%= will_paginate %>
 
 <ul class="users">

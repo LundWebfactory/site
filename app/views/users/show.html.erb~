@@ -6,7 +6,17 @@
         <%= gravatar_for @user %>
         <%= @user.username %>
       </h1>
+ 	   <%= link_to "Change Settings", edit_user_path(@user) %>
+ 	   <%= link_to "Create Post", new_post_path %>
     </section>
- 	   <%= link_to "Change Settings", edit_user_path(current_user), :target => "_blank" %>
   </aside>
+  <div class="span8">
+    <% if @user.posts.any? %>
+      <h3>Posts (<%= @user.posts.count %>)</h3>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>
 </div>

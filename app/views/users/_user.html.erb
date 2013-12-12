@@ -1,7 +1,12 @@
 <li>
   <%= gravatar_for user, size: 20 %>
   <%= link_to user.username, user %>
-  <% if current_user.admin? && !current_user?(user) %>| <%= link_to "edit", edit_user_path(user) %> | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+
+<div style="float: right">
+  <% if current_user.admin? && !current_user?(user) %>
+    <%= link_to "edit", edit_user_path(user) %> | 
+    <%= link_to "delete ", user, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
+     | <%= link_to admin_link_text(user), toggle_admin_user_path(user), :method => :put %>
+  </div>
 </li>
