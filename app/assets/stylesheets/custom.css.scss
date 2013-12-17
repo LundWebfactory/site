@@ -190,4 +190,7 @@ input {
 .divider { width: 100%; height: 20px; background: url('page_divide.png') repeat-x center center; float:left; }
 .users li img {height: 50px;}
 .users li a {color: $grayLight;}
-
+.catnew {
+  width: 50%;
+  margin: 0 auto;
+}

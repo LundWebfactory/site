@@ -6,7 +6,10 @@ Site::Application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :categories
+  resources :categories do
+    resources :subcategories
+  end
+
   resources :posts
 
   root 'static_pages#home'

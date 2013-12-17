@@ -1,0 +1,13 @@
+<% provide(:title, 'Categories - showing all') %>
+<h3>Categories <small><%= @categories.count %></small></h3>
+<%= link_to "Add new category", 'categories/new', class: "btn btn-small btn-default" %>
+<%= will_paginate %>
+<ul class="users">
+  <% @categories.each do |categorie| %>
+    <li>
+      <div style="width: 50px;"><%= categorie.posts.count %></div><%= categorie.categoryname %>
+      <div style="float: right"><%= link_to "edit", edit_category_path(categorie) %> | <%= link_to "delete", categorie, method: :delete, data: { confirm: "You sure?" } %></div>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>

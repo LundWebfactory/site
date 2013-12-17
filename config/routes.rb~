@@ -7,13 +7,10 @@ Site::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :categories
+  resources :subcategories
   resources :posts
 
   root 'static_pages#home'
-
-  get "static_pages/home"
-  get "categories/edit"
-  get "posts/show"
 
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',            via: 'get'

@@ -1,0 +1,13 @@
+class SubcategoriesController < ApplicationController
+
+  def create
+    @category = Category.find(params[:category_id])
+    @subcategory = @category.subcategories.create(params[:subcategory].permit(:subcategoryname))
+    redirect_to category_path(@category)
+  end
+
+  def show
+    @subcategory = subcategory.find(params[:id])
+  end
+
+end

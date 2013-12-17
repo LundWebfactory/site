@@ -14,12 +14,6 @@ namespace :db do
                    email: email,
                    password: password,
                    password_confirmation: password)
-    25.times do |i|
-      itemname  = "#{username}-#{i+1}"
-      itemdescription = "#{username}-desc-#{i+1}"
-      category_id = i+1
-      Post.create!(itemname: itemname,itemdescription: itemdescription,category_id: category_id)
-    end
 
     end
   end

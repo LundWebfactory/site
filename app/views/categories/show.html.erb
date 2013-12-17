@@ -1,8 +1,17 @@
 <% provide(:title, @category.categoryname) %>
-<h1><%= @category.categoryname %> <small> ID: <%= @category.id %>, <%= @category.posts.count %></small></h1>
+<h1><%= @category.categoryname %> <small> ID: <%= @category.id %>, <%= @category.subcategories.count %></small></h1>
 
 
-<% @category.posts.each do |post|%>
-<h3><%= link_to post.itemname, post_path(post) %></h3>
+<% @category.subcategories.each do |subcat|%>
+<li>
+  <%= link_to subcat.subcategoryname, category_subcategory_path(@category,subcat) %>
+
+</li>
+<% end %>
+
+<%= form_for([@category, @category.subcategories.build]) do |f| %>
+    <%= f.label :subcategoryname %><br />
+    <%= f.text_field :subcategoryname %>
+    <%= f.submit %>
 <% end %>
 

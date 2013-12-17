@@ -1,0 +1,12 @@
+class CreateSubcategories < ActiveRecord::Migration
+  def change
+    create_table :subcategories do |t|
+      t.string :subcategoryname
+      t.integer :user_id
+
+      t.timestamps
+    end
+    add_index :subcategoryname, :subcategoryname, unique: true
+
+  end
+end

@@ -8,7 +8,14 @@
     <section>
       <ul class="categories">
 	<% @categories.each do |categorie| %>
-          <li><%= link_to categorie.categoryname, category_path(categorie) %></li>
+          <li><b><%= categorie.categoryname %></b></li>
+
+  <% categorie.subcategories.each do |subcat| %>
+    <li>
+      <div style="padding-left:100px;float: left;"><%= subcat.subcategoryname %></div>
+    </li>
+  <% end %>
+ 
         <% end %>
       </ul>
     </section>

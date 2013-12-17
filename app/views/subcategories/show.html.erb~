@@ -1,0 +1,8 @@
+<% provide(:title, @category.categoryname) %>
+<h1><%= @category.categoryname %> <small> ID: <%= @category.id %></small></h1>
+
+
+<% @category.posts.each do |post|%>
+<h3><%= link_to post.itemname, post_path(post) %></h3>
+<% end %>
+

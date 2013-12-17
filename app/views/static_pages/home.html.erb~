@@ -6,7 +6,7 @@
       <%= render 'shared/user_info' %>
     </section>
     <section>
-      <ul class="cat-links">
+      <ul class="categories">
 	<% @categories.each do |categorie| %>
           <li><%= link_to categorie.categoryname, category_path(categorie) %></li>
         <% end %>

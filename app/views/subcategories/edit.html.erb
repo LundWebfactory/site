@@ -1,0 +1,12 @@
+<% provide(:title, 'Sub Categories - edit') %>
+<h1>Categories - edit</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+<%= form_for([@category, @subcategory]) do |f| %>
+    <%= f.label :subcategoryname %><br />
+    <%= f.text_field :subcategoryname %>
+    <%= f.submit %>
+<% end %>
+  </div>
+</div>

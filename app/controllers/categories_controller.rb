@@ -1,9 +1,11 @@
 class CategoriesController < ApplicationController
   before_action :signed_in_user, only: [:index, :new, :edit, :update, :destroy]
-  before_action :admin_user, only: [:index, :new, :edit, :update, :destroy]
+  before_action :admin_user, only: [:index, :show, :new, :edit, :update, :destroy]
 
   def index
     @categories = Category.paginate(page: params[:page])
+    @subcategories = Subcategory.all
+    @category = Category.all
   end
 
   def new
@@ -11,8 +13,12 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    redirect_to(root_url) unless current_user.admin?
-    @category = Category.find(params[:id])
+    if current_user && current_user.admin?
+     @category = Category.find(params[:id])
+     @subcategories = Subcategory.all
+    else
+     redirect_to root_url
+    end  
   end
 
   def edit
@@ -54,7 +60,7 @@ class CategoriesController < ApplicationController
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
     end
     def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      redirect_to(root_url) unless current_user && current_user.admin?
     end
 
 end

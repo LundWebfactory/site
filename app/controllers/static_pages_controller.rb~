@@ -2,8 +2,4 @@ class StaticPagesController < ApplicationController
   def home
     @categories = Category.all
   end
-  def index
-    @categories = Category.paginate(page: params[:page])
-  end
-
 end

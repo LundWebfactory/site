@@ -1,0 +1,15 @@
+<% provide(:title, 'Categories - Add new') %>
+<h1>Categories</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= render 'shared/error_category_messages' %>
+    <%= form_for(@category) do |f| %>
+
+      <%= f.label :categoryname, 'Category Name' %>
+      <%= f.text_field :categoryname %>
+      <center><%= f.submit "Create category", class: "btn btn-large btn-default" %></center>
+    <% end %>
+<%= link_to "Cancel", categories_path, class: "btn btn-small btn-default" %>
+  </div>
+</div>
